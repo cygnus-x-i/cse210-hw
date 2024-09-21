@@ -9,8 +9,8 @@ This repository contains the starter code for many different projects. They are 
 * `prove` - Starter projects for each of the prove Developer projects.
 * `final` - Starter projects for final project.
 
-* `New project` = dotnet new console -o program_name --use-program-main
-* `Add file to staging area` = git add <file name>
-* `git status` = git status
-* `commit changes locally` = git commit -m "Comment Here"
-* `push changes to github` = git push origin main
+* `New project` - dotnet new console -o program_name --use-program-main
+* `Add file to staging area` - git add <file name>
+* `git status` - git status
+* `commit changes locally` - git commit -m "Comment Here"
+* `push changes to github` - git push origin main
