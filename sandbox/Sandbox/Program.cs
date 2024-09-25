@@ -4,6 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
+        List<int> x;
+        x = [24, 25, 26];
+        foreach(int i in x)
+        {
+            Console.WriteLine(i);
+        }
     }
 }
