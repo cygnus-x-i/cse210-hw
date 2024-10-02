@@ -4,27 +4,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        Random randomGenerator = new();
-        int d1 = randomGenerator.Next(1,7);
-        int d2 = randomGenerator.Next(1,7);
-        int d3 = randomGenerator.Next(1,7);
+        List<double> x = new();
 
-        if (d2 > d3)
+        double input;
+        input = 1;
+        while(input != 0)
         {
-            (d2, d3) = (d3, d2);
+            Console.Write("Enter something: ");
+            string input_str = Console.ReadLine();
+            input = double.Parse(input_str);
+            x.Add(input);vv
         }
-        if (d1 > d3)
+        Console.WriteLine("Entered Values:");
+        int value = 1;
+        foreach(int i in x)
         {
-            (d1, d3) = (d3, d1);
+            Console.WriteLine($"Value {value}: {i}");
+            value++;
         }
-        if (d1 > d2)
-        {
-            (d1, d2) = (d2, d1);
-        }
-
-
-        Console.WriteLine($"The Dice Are: {d1}, {d2}, {d3}");
-        Console.WriteLine($"Their sum is {d1+d2+d3}");
     }
-
 }
