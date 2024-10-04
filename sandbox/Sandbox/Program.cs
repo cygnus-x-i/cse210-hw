@@ -5,21 +5,21 @@ class Program
     static void Main(string[] args)
     {
         Costume nurse = new();
-        nurse.headWear = "Face mask";
-        nurse.gloves = "Latex";
-        nurse.shoes = "Orthopedic sneakers";
-        nurse.upperGarment = "Scrubs";
-        nurse.lowerGarment = "Scrubs";
-        nurse.accessory = "Stethoscope";
+        nurse._headWear = "Face mask";
+        nurse._gloves = "Latex";
+        nurse._shoes = "Orthopedic sneakers";
+        nurse._upperGarment = "Scrubs";
+        nurse._lowerGarment = "Scrubs";
+        nurse._accessory = "Stethoscope";
 
 
         Costume detective = new();
-        detective.headWear = "Fedora";
-        detective.gloves = "Leather";
-        detective.shoes = "Loafers";
-        detective.upperGarment = "Trench coat";
-        detective.lowerGarment = "Slacks";
-        detective.accessory = "Magnifying glass";
+        detective._headWear = "Fedora";
+        detective._gloves = "Leather";
+        detective._shoes = "Loafers";
+        detective._upperGarment = "Trench coat";
+        detective._lowerGarment = "Slacks";
+        detective._accessory = "Magnifying glass";
 
         nurse.showWardrobe();
         detective.showWardrobe();

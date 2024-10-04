@@ -1,23 +1,23 @@
 class Costume
 {
     // attributes
-    public string headWear;
-    public string gloves;
-    public string shoes;
-    public string upperGarment;
-    public string lowerGarment;
-    public string accessory;
+    public string _headWear;
+    public string _gloves;
+    public string _shoes;
+    public string _upperGarment;
+    public string _lowerGarment;
+    public string _accessory;
 
     // behaviors
     public void showWardrobe()
     {
         string result = $"";
-        result += $"Head: {headWear}\n";
-        result += $"Hands: {gloves}\n";
-        result += $"Feet: {shoes}\n";
-        result += $"Torso: {upperGarment}\n";
-        result += $"Legs: {lowerGarment}\n";
-        result += $"Accessory: {accessory}\n";
+        result += $"Head: {_headWear}\n";
+        result += $"Hands: {_gloves}\n";
+        result += $"Feet: {_shoes}\n";
+        result += $"Torso: {_upperGarment}\n";
+        result += $"Legs: {_lowerGarment}\n";
+        result += $"Accessory: {_accessory}\n";
         Console.WriteLine(result);
     }
 }
