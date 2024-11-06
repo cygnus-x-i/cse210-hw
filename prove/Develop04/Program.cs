@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        Console.Write("Hello World ");
+        Activity activity = new();
+        activity.Loading();
     }
 }
+
