@@ -1,35 +1,34 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 class Activity
 {
     // Attributes
-    int _time;
+    public int _actTime;
 
     //  Behaviors
     
-    public void StartMessage()
+    public void StartMessage(string description)
     {
-
+        Console.Write(description);
     }
 
-    public void EndMessage()
+    public void EndMessage(string endMessage)
     {
-
+        Console.WriteLine(endMessage);
     }
 
-    public void Loading()
+    public void Loading(int time)
 {
+    // this was funny so i left it in.  it is not ideal
     string loadingString = "";
-    for(int j = 0; j<20; j++)
+    for(int j = 0; j < time; j++)
     {
-        for (int i = 0; i <= 9; i++)
+        for (int i = 1; i <= 8; i++)
         {
-            if (i == 0)
-            {
-                loadingString = "-----";
-            }
-            else if (i == 1)
+
+            if (i == 1)
             {
                 loadingString = "=----";
             }
@@ -61,43 +60,51 @@ class Activity
             {
                 loadingString = "-=---";
             }
-            else if (i == 9)
-            {
-                loadingString = "=----";
-            }
             
-            Console.WriteLine(loadingString);
+            Console.Write(loadingString);
             Thread.Sleep(100);
-            ClearLastCharacters(5);
+            Console.Write("\b\b\b\b\b");
+            // Console.Clear();
+            // ClearLastCharacters(5);
         }
     }
 }
 
-
-    public void StartActivity()
+    public void StartActivity(string endMessage, Func<int> function)
     {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_actTime);
+        // Console.WriteLine("entering loop"); //for debug
 
+        // Main Loop
+        Console.Clear();
+        Console.WriteLine("Get ready... ");
+        Loading(4);
+        Console.Clear();
+
+        while(true)
+        {
+
+            int x = function();
+            
+            DateTime datetime = DateTime.Now;
+
+            if (futureTime < datetime)
+            {
+                break;
+            }
+
+            Thread.Sleep(100);
+        }
+
+        EndMessage(endMessage);
+        Console.Write("Press Enter to continue.");
+        Console.ReadLine();
+        // Console.WriteLine("Left loop"); //for debug
     }
 
-    public int GetTime()
+    public void SetTime()
     {
-        return _time;
+        _actTime = int.Parse(Console.ReadLine());
     }
-
-    public void ClearLastCharacters(int count)
-    {
-        // Get the current cursor position
-        int cursorLeft = Console.CursorLeft;
-        int cursorTop = Console.CursorTop;
-
-        // Move the cursor back by 'count' characters
-        Console.SetCursorPosition(cursorLeft - count, cursorTop);
-
-        // Overwrite with spaces
-        Console.Write(new string(' ', count));
-
-        // Move the cursor back again to the original position
-        Console.SetCursorPosition(cursorLeft - count, cursorTop);
-    }
-
 }
