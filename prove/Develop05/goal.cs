@@ -27,6 +27,7 @@ class Goal
 
     public virtual string GetStatus()
     {
+        // I learned this from my SystemVerilog Class :)
         return _done ? "[X]" : "[ ]";
     }
 
