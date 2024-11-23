@@ -7,6 +7,7 @@ class Goal
 
     public void Initialize(string title, string description, int pointVal)
     {
+        // Makes everything ready
         _title = title;
         _description = description;
         _pointVal = pointVal;

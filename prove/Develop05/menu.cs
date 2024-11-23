@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 class Menu
 {
@@ -52,10 +53,13 @@ class Menu
     }
     else
     {
+        int x = 0;
         foreach (var goal in _goals)
         {
-            Console.WriteLine($"{goal.GetStatus()} {goal.GetTitle()} ({goal.GetDescription()})");
+            x++;
+            Console.WriteLine($"{x}. {goal.GetStatus()} {goal.GetTitle()} ({goal.GetDescription()})");
         }
+        
     }
     Console.WriteLine($"Total Score: {_score}");
 }
@@ -64,7 +68,7 @@ class Menu
     public void RecordEvent()
     {
         ListGoals();
-        Console.Write("Select a goal to record: ");
+        Console.Write("Select a goal to record:  ");
         int index = int.Parse(Console.ReadLine()) - 1;
         if (index >= 0 && index < _goals.Count)
         {
